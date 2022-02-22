@@ -70,9 +70,9 @@ t2_hand_plot = graph.plot(pen=pen)
 
 def set_t(temp,temp2):
     #hand core 0
-	deg_t=((temp-50)/200)*360
-	x_t = np.sin(np.radians(deg_t)) * radius * 0.7
-	y_t = np.cos(np.radians(deg_t)) * radius * 0.7
+    deg_t=((temp-50)/200)*360
+    x_t = np.sin(np.radians(deg_t)) * radius * 0.7
+    y_t = np.cos(np.radians(deg_t)) * radius * 0.7
     t_hand_plot.setData([0, x_t], [0, y_t])
     #hand core 1
     deg_t2=((temp2-50)/200)*360
@@ -83,12 +83,12 @@ def set_t(temp,temp2):
 
 #read temperature
 def update_temp():
-    #read temperature core 0
+	#read temperature core 0
 	fileName = ("/sys/class/thermal/thermal_zone0/temp")
 	fw = open(fileName,"r")
 	temp = int(fw.read())/1000
 	fw.close()
-    #read temperature core 1
+	#read temperature core 1
 	fileName = ("/sys/class/thermal/thermal_zone1/temp")
 	fw = open(fileName,"r")
 	temp1 = int(fw.read())/1000
